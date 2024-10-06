@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Date Picker</title>
+
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <!-- jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Date Picker</h1>
+
+        <!-- Date picker input -->
+        <label for="date">Select Date:</label>
+        <input type="text" id="date" placeholder="Pick a date">
+
+        <br><br>
+
+        <!-- Submit button -->
+        <button id="submit-btn">Submit</button>
+
+        <p id="result"></p>
+
+    </div>
+
+    <script>
+        // Initialize the date picker
+        $(document).ready(function () {
+            $("#date").datepicker();
+        });
+
+        // Handle button click
+        $("#submit-btn").click(function () {
+            const selectedDate = $("#date").val();
+            if (selectedDate) {
+                $("#result").text("Selected Date: " + selectedDate);
+            } else {
+                $("#result").text("Please select a date.");
+            }
+        });
+    </script>
+</body>
+</html>

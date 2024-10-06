@@ -29,7 +29,7 @@
 
         <!-- Date picker input -->
         <label for="date">Select Date:</label>
-        <input type="text" id="date" placeholder="Pick a date">
+        <input type="text" id="date" readonly="readonly" placeholder="Pick a date">
 
         <br><br>
 
@@ -43,7 +43,9 @@
     <script>
         // Initialize the date picker
         $(document).ready(function () {
-            $("#date").datepicker();
+            $("#date").datepicker({
+                dateFormat: 'mm/dd/yy' // Format the date
+            });
         });
 
         // Handle button click
